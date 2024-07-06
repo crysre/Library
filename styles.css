@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+
+}
+
+.no-1{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    flex: 1;
+    padding: 2%;
+    gap: 15px;
+    
+}
+.formDiv{
+    opacity: 0;
+    height: 50vh;
+    width: 20vw;
+    background-color: aliceblue;
+    border-radius: 5px;
+}
+h1{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+#formContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3vh;
+    width: 8vh;
+    background-color: rgb(0, 253, 42);
+}
+
+.no-2{
+    background-color: bisque;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 20px;
+}
+
+.booksContainer{
+    background-color: bisque;
+    flex: 24;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 5px;
+    overflow: auto;
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    border-radius: 5%;
+    padding-top: 15px;
+    text-align: center;
+    background-color: white;
+    height: 20vh;
+    width: 120px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
+
+.fDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    
+}
+
+input{
+    border-radius: 25px;
+}
+
+#addBook, #cancelButton{
+    height: 2rem;
+    width: 5rem;
+    background-color: rgb(0, 253, 42);
+}
+
+#addBook:hover{
+    box-shadow: 5px 6px 5px 0 rgb(0, 0, 0);
+}
+
+#cancelButton:hover{
+    background-color: red;
+    box-shadow: 5px 6px 5px 0 rgb(0, 0, 0);
+}
+
+#rm:hover{
+    background-color: red;
+    box-shadow: 3px 4px 3px 0 rgb(0, 0, 0);
+}
+
+input{
+    padding: 10px;
+}
+
+button{
+    border-radius: 5px;
+}
+
+.r{
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2vh;
+    width: 6vh;
+    background-color: rgb(0, 253, 42);
+}
+
+#readStatus{
+    height: 4vh;
+}
