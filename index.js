@@ -7,7 +7,6 @@ const checkbox = document.getElementById("isRead");
 const booksContainer = document.querySelector(".booksContainer");
 const ogForm = document.querySelector(".formDiv");
 const cancelButton = document.getElementById("cancelButton");
-const removeButton = document.querySelectorAll(".removeButton")
 
 let id = 0;
 const myLibrary = [];
@@ -21,43 +20,62 @@ function Book(title, author, pages, isRead, id) {
 }
 
 function addBookToLibrary() {
-    const newBook = new Book(title.value,author.value, pages.value,checkbox.checked, id++)
+    const newBook = new Book(title.value, author.value, pages.value, checkbox.checked, id++);
     myLibrary.push(newBook);
 }
 
-function displayBooks () {
+function displayBooks() {
     booksContainer.innerHTML = "";
-    myLibrary.forEach((book)=>{
+    myLibrary.forEach((book) => {
         const newDiv = document.createElement("div");
-        newDiv.classList.add("item")
+        newDiv.classList.add("item");
         newDiv.innerHTML = `
         <p>Title: ${book.title}</p>
         <p>Author: ${book.author}</p>
         <p>Pages: ${book.pages}</p>
         <p>Read: ${book.isRead ? "Yes" : "No"}</p>
-        <button class="r" data-id="${book.id}" id="rm" class="removeButton" >Remove</button>
-        <button class="r" data-id="${book.id}" id="readStatus">${book.isRead ? "Read" : "Didn't read"}</button>
+        <button  class="removeButton r" data-id="${book.id}">Remove</button>
+        <button  id="readStatus" class="readstatusButton r" data-id="${book.id}">${book.isRead ? "Read" : "Didn't read"}</button>
         `;
         booksContainer.appendChild(newDiv);
     });
+    addRemoveListeners();
+    addReadStatusListeners();
 }
 
-formShower.addEventListener("click", (event)=>{
+function addRemoveListeners() { 
+    const removeButtons = document.querySelectorAll(".removeButton");
+    removeButtons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+            const id = parseInt(event.target.dataset.id, 10);
+            myLibrary.splice(myLibrary.findIndex(book => book.id === id), 1);
+            displayBooks();
+        });
+    });
+}
+
+function addReadStatusListeners() {
+    const readstatusButtons = document.querySelectorAll(".readstatusButton");
+    readstatusButtons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+            const id = parseInt(event.target.dataset.id, 10);
+            const book = myLibrary.find(book => book.id === id);
+            book.isRead = !book.isRead;
+            displayBooks();
+        });
+    });
+}
+
+formShower.addEventListener("click", () => {
     ogForm.style.opacity = 1;
 });
 
-cancelButton.addEventListener("click", (event)=>{
+cancelButton.addEventListener("click", () => {
     ogForm.style.opacity = 0;
-})
+});
 
-addBook.addEventListener("click", (event)=>{
+addBook.addEventListener("click", (event) => {
     event.preventDefault();
     addBookToLibrary();
     displayBooks();
-    
-
 });
-
-removeButton.addEventListener("click", (event)=>{
-
-})

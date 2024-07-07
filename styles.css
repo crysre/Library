@@ -74,6 +74,7 @@ h1{
     background-color: white;
     height: 20vh;
     width: 120px;
+    overflow: auto;
 }
 
 form{
@@ -111,7 +112,7 @@ input{
     box-shadow: 5px 6px 5px 0 rgb(0, 0, 0);
 }
 
-#rm:hover{
+.removeButton:hover{
     background-color: red;
     box-shadow: 3px 4px 3px 0 rgb(0, 0, 0);
 }
@@ -136,4 +137,8 @@ button{
 
 #readStatus{
     height: 4vh;
+}
+
+#readStatus:hover{
+    box-shadow: 5px 6px 5px 0 rgb(0, 0, 0);
 }

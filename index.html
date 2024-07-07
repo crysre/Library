@@ -7,52 +7,43 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div class="container" >
+    <div class="container">
         <div class="no-1">
             <button id="formContainer">
                 Add Book
             </button>
             <div class="formDiv">
               <form action="/submit" method="POST">
-                
                 <div class="fDiv">
                     <label for="title">Title: </label>
                     <input type="text" id="title" name="title">
                 </div>
-                
                 <div class="fDiv">
                     <label for="author">Author: </label>
                     <input type="text" id="author" name="author">
                 </div>
-                
                 <div class="fDiv">
                     <label for="pages">Pages: </label>
                     <input id="pages" type="number" name="pages">
                 </div>
-
                 <div class="fDiv">
-                    <label for="isRead">Is Read ?</label>
+                    <label for="isRead">Is Read?</label>
                     <input type="checkbox" id="isRead" name="isRead">
                 </div>
-                
                 <div class="fDiv">
                     <button type="submit" id="addBook" value="submit">Add Book</button>
                 </div>
-
                 <div class="fDiv">
-                    <button type="button" id="cancelButton" >Cancel</button>
+                    <button type="button" id="cancelButton">Cancel</button>
                 </div>
-
               </form>
             </div>
         </div>
         <div class="no-2">
             <h1>Library</h1>
-            <div class="booksContainer">
-                
-            </div>
+            <div class="booksContainer"></div>
         </div>
     </div>
-    <script src="./index.js" ></script>
+    <script src="./index.js"></script>
 </body>
 </html>
